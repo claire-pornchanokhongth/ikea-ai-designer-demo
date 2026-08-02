@@ -34,7 +34,7 @@ The engine interprets three things from the description, even when the prompt is
 - **Functional Needs** when users specifically state into the description (e.g., work desk, reading corner, extra storage)
 - **Budget** to ensure that users are comfortable with their amount of total spending
 
-## How it works (and the production path)
+## How it works
 
 - AI Designer (BETA) interprets your description on-device
 - Theme, needs, and budget are parsed by a rules engine over this tagged catalogue
