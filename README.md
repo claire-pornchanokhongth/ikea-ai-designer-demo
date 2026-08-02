@@ -3,7 +3,7 @@
 An interactive 3D room planner prototype exploring how a prompt-driven AI layer could remove the biggest friction in room-planning tools when users know what and how they want, but the tool only understands individual products.
 
 > **Disclaimer**
-> This is an independent, unofficial prototype created for educational case study, non-commercial, and conceptual purposes only. All product names, designs, and prices shown are illustrative. They are **not affiliated with, endorsed by, or representative of Inter IKEA Systems B.V.**, and do not reflect actual IKEA inventory or pricing.
+> This is an independent, unofficial prototype created for educational case study, non-commercial, and conceptual purposes only. All product names, designs, and prices shown are illustrative. They are **NOT affiliated with, endorsed by, or representative of Inter IKEA Systems B.V.**, and do not reflect actual IKEA inventory or pricing.
 >
 > This is a limited prototype. Certain links, buttons, and areas are not fully functional.
 
@@ -21,7 +21,7 @@ Today, translating that intent into products means manually browsing and placing
 
 ## The prototype
 
-This prototype adds an **AI Designer** (BETA) on top of the replica of current IKEA planner experience. The user types a description in plain language, sets a budget, and receives **3 furnished room options**: Essentials, Best Match, and Complete. All under the rules engineering:
+This prototype adds an **AI Designer** (BETA) on top of the replica of current IKEA planner experience. The user types a description in plain language, sets a budget, and receives **3 furnished room options**: Essentials, Best Match, and Complete.
 
 - A distinct bed matched to the theme
 - Textiles in specific colorways (i.e. duvet, cushions, throw, rug) as purchasable line items
@@ -35,6 +35,11 @@ The engine interprets three things from the description, even when the prompt is
 - **Budget** to ensure that users are comfortable with their amount of total spending
 
 ## How it works (and the production path)
+
+- AI Designer (BETA) interprets your description on-device
+- Theme, needs, and budget are parsed by a rules engine over this tagged catalogue
+- Design Generation prioritizes a bed-first guaranteed regardless of your budget, then anything you specified (e.g. a desk or a chair), followed by core lighting and storage. Any leftover budget goes to themed decor, and steps down to a cheaper alternative
+- Match Your Budget and Complete The Look always reserve enough budget for wallpaper and flooring, while Get The Essentials only keeps them if there is still room after furniture
 
 The interpretation layer in this prototype is a deterministic on-device rules engine using keyword-based theme and needs detection. 
 
