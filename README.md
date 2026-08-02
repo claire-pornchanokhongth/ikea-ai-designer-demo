@@ -3,7 +3,7 @@
 An interactive 3D room planner prototype exploring how a prompt-driven AI layer could remove the biggest friction in room-planning tools when users know what and how they want, but the tool only understands individual products.
 
 > **Disclaimer**
-> This is an independent, unofficial prototype created for educational case study, non-commercial, and conceptual purposes only. All product names, designs, and prices shown are illustrative. They are **not affiliated with, endorsed by, or representative of Inter IKEA Systems B.V.**, and do not reflect actual IKEA inventory or pricing.
+> This is an independent, unofficial prototype created for educational case study, non-commercial, and conceptual purposes only. All product names, designs, and prices shown are illustrative. They are **NOT affiliated with, endorsed by, or representative of Inter IKEA Systems B.V.**, and do not reflect actual IKEA inventory or pricing.
 >
 > This is a limited prototype. Certain links, buttons, and areas are not fully functional.
 
