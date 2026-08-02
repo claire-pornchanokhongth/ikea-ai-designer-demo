@@ -213,7 +213,11 @@
   .sw.on{box-shadow:0 0 0 2px var(--ik-blue)}
 
   /* ---------- AI panel ---------- */
-  #aiPanel{position:fixed;right:88px;top:82px;width:368px;max-width:calc(100vw - 104px);max-height:calc(100vh - 150px);background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);z-index:39;display:none;flex-direction:column;overflow:hidden}
+  /* width is a fixed 368px, no responsive sizing -- no max-width cap, and (see the mobile
+     media query below) no override there either, so it stays exactly 368px at any viewport.
+     Height is unrelated to this and keeps its own existing behavior (auto, capped by
+     max-height so it never exceeds what a short viewport can actually show) */
+  #aiPanel{position:fixed;right:88px;top:82px;width:368px;max-height:calc(100vh - 150px);background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);z-index:39;display:none;flex-direction:column;overflow:hidden}
   #aiPanel.open{display:flex}
   #aiPanel .ai-head{padding:15px 18px;border-bottom:1px solid var(--grey-3);display:flex;align-items:center;justify-content:space-between}
   #aiPanel .ai-head b{font-size:14.5px}
@@ -307,12 +311,12 @@
      staying centered on the full page, regardless of what the rest of the layout needs. Below
      it, stack the intro centered on top of the panel instead (still capped at the same 496px
      preferred width, just no longer forced to the full fixed height so it can shrink on short
-     viewports too), and let the panel go fluid-width to match (same treatment the general
-     mobile layout above already uses for it below 900px -- #aiPanel needs it repeated here
-     since 900px doesn't cover this whole range). */
+     viewports too). #aiPanel itself gets no override here -- its width has no responsive
+     sizing at all (see its own base rule), so it stays exactly 368px in its normal
+     right:88px spot underneath the stacked intro card rather than going fluid-width to match
+     it. */
   @media (max-width:1440px){
     #introModal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(100vw - 24px);max-width:496px;height:auto;max-height:calc(100vh - 150px)}
-    #aiPanel{right:88px;left:8px;width:auto;max-width:none}
   }
 </style>
 </head>
