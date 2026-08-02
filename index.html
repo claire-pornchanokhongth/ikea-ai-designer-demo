@@ -22,24 +22,23 @@
   @keyframes sp{to{transform:rotate(360deg)}}
 
   /* ---------- AI Designer intro (shown once per page load, shortly after load) ----------
-     a card centered on the full viewport width and top-aligned to the same 82px offset as
-     the AI panel (which opens automatically alongside it), with a backdrop that dims
-     everything except the panel and the card itself — both sit above the backdrop in
-     stacking order, so they read as "in focus" while the rest dims out.
-     #introOuter spans the whole viewport and top-aligns its content so #introModal's top
-     matches #aiPanel's top exactly. #introModal's own max-width is computed directly against
-     100vw (aiPanel is right:88px + width:368px, so its left edge sits at 100vw - 456px) so
-     that a card centered on the full width never crosses into the panel — a 16px gap short of
-     the panel's left edge — shrinking below its preferred 560px on narrower viewports instead
-     of ever overlapping. Below ~900px viewport width the panel alone exceeds half the screen,
-     so a fully centered card has no overlap-free solution at any width — that range is an
-     inherent geometric limit, not a bug in this formula. (If #aiPanel's width or right offset
-     ever changes again, this max-width needs recomputing: 2 × (right + width + 16).) */
+     a card centered on the full viewport width (true page-center) and top-aligned to the
+     same 82px offset as the AI panel (which opens automatically alongside it), with a
+     backdrop that dims everything except the panel and the card itself — both sit above the
+     backdrop in stacking order, so they read as "in focus" while the rest dims out.
+     #introModal is a fixed 496x352, flex-shrink:0 so it can never get squeezed narrower --
+     it never resizes, full stop.
+     Because the card is truly centered on the full page rather than confined next to the
+     panel, the safe minimum viewport width has to account for the card's half-width (248)
+     extending right of center: it needs to clear aiPanel's left edge (100vw - 456, i.e.
+     right:88px + width:368px) with a 16px gap -- 100vw/2 + 248 + 16 ≤ 100vw - 456, i.e.
+     100vw ≥ 1440. Below that, a separate media query switches #introModal to floating
+     centered on top of the panel instead (see that query). */
   #introBackdrop{position:fixed;inset:0;z-index:38;background:rgba(17,17,17,.5);display:none}
   #introBackdrop.open{display:block}
   #introOuter{position:fixed;left:0;right:0;top:82px;bottom:16px;z-index:90;display:none;align-items:flex-start;justify-content:center;padding:0 16px;pointer-events:none}
   #introOuter.open{display:flex}
-  #introModal{position:relative;pointer-events:auto;width:560px;max-width:calc(100vw - 944px);max-height:100%;overflow-y:auto;background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);padding:24px 22px 26px;text-align:center}
+  #introModal{position:relative;pointer-events:auto;width:496px;height:352px;flex-shrink:0;max-height:100%;overflow-y:auto;background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);padding:24px 22px 26px;text-align:center}
   #introModal .icon-btn{position:absolute;top:8px;right:8px}
   .intro-spark{width:48px;height:48px;border-radius:50%;background:var(--ik-blue);color:var(--ik-yellow);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
   #introModal h2{font-size:17px;display:flex;align-items:center;justify-content:center;gap:7px;margin-bottom:9px}
@@ -214,7 +213,11 @@
   .sw.on{box-shadow:0 0 0 2px var(--ik-blue)}
 
   /* ---------- AI panel ---------- */
-  #aiPanel{position:fixed;right:88px;top:82px;width:368px;max-width:calc(100vw - 104px);max-height:calc(100vh - 150px);background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);z-index:39;display:none;flex-direction:column;overflow:hidden}
+  /* fixed 368x462, no responsive sizing -- no max-width/max-height cap, and unlike aside and
+     #finishes it gets no override in the mobile media query below either, so it stays exactly
+     this size at any viewport (.ai-body scrolls internally, see its own rule, so content past
+     the fixed height is still reachable rather than clipped) */
+  #aiPanel{position:fixed;right:88px;top:82px;width:368px;height:462px;background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);z-index:39;display:none;flex-direction:column;overflow:hidden}
   #aiPanel.open{display:flex}
   #aiPanel .ai-head{padding:15px 18px;border-bottom:1px solid var(--grey-3);display:flex;align-items:center;justify-content:space-between}
   #aiPanel .ai-head b{font-size:14.5px}
@@ -293,16 +296,26 @@
   /* menu dropdown */
   /* mobile */
   @media (max-width:900px){
-    aside{right:8px;left:8px;width:auto;max-width:none;top:82px;bottom:64px;transform:translateY(calc(100% + 80px))}
+    /* #rail stays put (vertical, right:14px, same as desktop -- see its own base rule) instead
+       of relocating to a horizontal bottom bar, so every right-docked panel below keeps the
+       same right:88px clearance the desktop layout already uses to stay clear of it, rather
+       than going edge-to-edge and sitting underneath it */
+    aside{right:88px;left:8px;width:auto;max-width:none;top:82px;bottom:64px;transform:translateY(calc(100% + 80px))}
     aside.open{transform:none}
-    #rail{right:8px;top:auto;bottom:8px;flex-direction:row}
-    .railgrp{flex-direction:row}
-    .railgrp.cats{max-height:none;max-width:calc(100vw - 200px);overflow-x:auto;overflow-y:visible}
-    #aiPanel{right:8px;left:8px;width:auto;max-width:none;top:82px}
-    #finishes{right:12px}
-    /* no room beside the AI panel once it's full-width, so the intro escapes the flex wrapper
-       and floats centered on the viewport, on top of the panel, instead */
-    #introModal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(100vw - 24px);max-width:480px;max-height:calc(100vh - 150px)}
+    #finishes{right:88px}
+  }
+
+  /* separate from the general mobile layout above, and a wider breakpoint than it -- this is
+     specifically where #introModal (fixed 496x352, true page-centered, see its own base rule
+     and its 1440 derivation) can no longer clear #aiPanel's reserved zone (456px) while
+     staying centered on the full page, regardless of what the rest of the layout needs. Below
+     it, stack the intro centered on top of the panel instead (still capped at the same 496px
+     preferred width, just no longer forced to the full fixed height so it can shrink on short
+     viewports too). #aiPanel itself gets no override here -- it has no responsive sizing at
+     all (see its own base rule), so it stays exactly 368x462 in its normal right:88px/top:82px
+     spot underneath the stacked intro card rather than going fluid-width to match it. */
+  @media (max-width:1440px){
+    #introModal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(100vw - 24px);max-width:496px;height:auto;max-height:calc(100vh - 150px)}
   }
 </style>
 </head>
