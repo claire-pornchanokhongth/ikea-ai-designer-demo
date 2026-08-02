@@ -4737,7 +4737,7 @@ $('#aiGen').addEventListener('click', async ()=>{
     res.innerHTML = `<div class="interp">${themeTag}${colorTag}${needTags}<span class="ichip">Budget: <b>${THB(budget)}</b></span></div>` +
       data.options.map(o=>{
         const within = o.total<=budget ? '<span class="badge">WITHIN BUDGET</span>' : '';
-        const exceeds = (o.key==='full' && o.total>budget) ? `<div class="exceeds">Exceeds budget by ${THB(o.total-budget)} for complete thematic room setup.</div>` : '';
+        const exceeds = (o.key==='full' && o.total>budget) ? `<div class="exceeds">Exceeds budget by only ${THB(o.total-budget)} for complete thematic room setup.</div>` : '';
         return `<div class="opt" data-key="${o.key}">
           <div class="om">
             <b>${o.title} ${within}</b>

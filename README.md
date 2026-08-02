@@ -1,8 +1,8 @@
-# Design Your Room with AI Designer (Unofficial IKEA Planner Prototype)
+# Design Your Room with AI Designer (Unofficial IKEA 3D Room Planner Prototype)
 
 An interactive 3D room planner prototype exploring how a prompt-driven AI layer could remove the biggest friction in room-planning tools when users know what and how they want, but the tool only understands individual products.
 
-> **Disclaimer**
+> **Disclaimer:**
 > This is an independent, unofficial prototype created for educational case study, non-commercial, and conceptual purposes only. All product names, designs, and prices shown are illustrative. They are **NOT affiliated with, endorsed by, or representative of Inter IKEA Systems B.V.**, and do not reflect actual IKEA inventory or pricing.
 >
 > This is a limited prototype. Certain links, buttons, and areas are not fully functional.
@@ -14,14 +14,14 @@ An interactive 3D room planner prototype exploring how a prompt-driven AI layer 
 IKEA's current room planner is a capable manual tool, but it assumes the user already knows what to place. In reality, most people start with an intent instead of a shopping list:
 
 - "I want a room that's calm and full of plants."
-- "I'm big fan of sci-fi, so I want a galaxy room with an alien bed."
+- "I'm a big fan of sci-fi, so I want a galaxy room with an alien bed."
 - "I want my room dark and moody because I love reading at night."
 
 Today, translating that intent into products means manually browsing and placing every piece. Users with a clear aesthetic vision but no product knowledge get stuck at a blank room.
 
 ## The prototype
 
-This prototype adds an **AI Designer** (BETA) on top of the replica of current IKEA planner experience. The user types a description in plain language, sets a budget, and receives **3 furnished room options**: Essentials, Best Match, and Complete.
+This prototype adds an **AI Designer (BETA)** on top of the replica of current IKEA planner experience. The user types a description in plain language, sets a budget, and receives **3 furnished room options**: *Essentials* (The comfortable bedroom including what you need), *Best Match* (The most reflective from your description balancing with the budget), and *Complete* (The full look of your theme with comfort and decor extras from very few additional budget).
 
 - A distinct bed matched to the theme
 - Textiles in specific colorways (i.e. duvet, cushions, throw, rug) as purchasable line items
