@@ -21,7 +21,7 @@ Today, translating that intent into products means manually browsing and placing
 
 ## The Prototype
 
-This prototype adds an **AI Designer (BETA)** on top of the replica of current IKEA planner experience. The user types a description in plain language, sets a budget, and receives **3 furnished room options** to start with in just **under 1 minute**: 
+This prototype adds an **AI Designer (BETA)** on top of the replica of current IKEA planner experience. The user types a description in plain language, sets a budget, and receives **3 starting furnished room options** instead of a blank one to start with in just **under 1 minute**: 
 
 - *Get The Essentials*: The comfortable bedroom including what you need 
 - *Match Your Budget*: The most reflective from your description balancing with the budget
@@ -58,11 +58,17 @@ It is deliberately built behind a defined JSON contract ({brief, budget, catalog
 
 ## Try it yourself
 
-Try visualizing your room into the description box, or:
+1. Try visualizing your room into the description box, or:
 
-*"I need a calm, forest theme room with full of plants and a desk to work from home"*
+> *"I need a calm, forest theme room with full of plants and a desk to work from home"*
 
-You could type in your prompt perfectly or vaguely. Then, compare how the rooms, colors, and finishes change in each of the 3 options!
+You could type in your prompt perfectly or vaguely
+
+2. Compare how the rooms, colors, and finishes change in each of the 3 options
+
+3. Select what matches your thought the most, then finalize your room!
+
+> This is where you could either seeking further AI assistance or manually design your room
 
 ## Current Scope and Known Limitations
 
