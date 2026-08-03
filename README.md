@@ -66,11 +66,12 @@ You could type in your prompt perfectly or vaguely. Then, compare how the rooms,
 
 ## Current Scope and Known Limitations
 
-- Interpretation is keyword-based, not an LLM. Nuanced or contradictory prompts sometimes fall back to a disclosed default.
 - Save, measurement, checkout, and account features are mockups.
+- Limited mock products lead to some generated results that might not fully match user prompt.
+- Interpretation is keyword-based, not an LLM. Nuanced or contradictory prompts sometimes fall back to a disclosed default.
+- Using Internal CSS for single-page prototypes to test an idea swiftly
 - Layout uses slot-based placement. Items can visually overlap in edge cases and can be repositioned by hand.
 - Desktop and mobile are supported, but the experience is designed desktop-first.
-- Limited mock products lead to some generated results that might not fully match user prompt.
 
 ## Purposes
 
