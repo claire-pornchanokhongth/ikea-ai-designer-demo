@@ -52,8 +52,8 @@ It is deliberately built behind a defined JSON contract ({brief, budget, catalog
 
 ## The Pricing Logics behind each choice
 
-- **Get The Essentials**: Because the core intent of any users choosing this option is to save most out of their budget, this option aims to spend only *30-50%* of the user's maximum budget
-- **Match Your Budget**: This option allows user to optimize the budget fully for the best possible quality and match. The target spend is aimed at *85-100%* of user's target budget
+- **Get The Essentials**: Because the core intent of any users choosing this option is to save most out of their budget, this option aims to spend only *30-50%* of the user's maximum budget.
+- **Match Your Budget**: This option allows user to optimize the budget fully for the best possible quality and match. The target spend is aimed at *85-100%* of user's target budget.
 - **Complete The Look**: Users choosing this path prioritize prompt accuracy and demonstrate budget flexibility. Recommending products at *100-110%* of their target budget ensures they achieve their ideal room aesthetic, while strategically increasing IKEA's unit volume. 
 
 ## Try it yourself
