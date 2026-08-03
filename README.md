@@ -21,7 +21,7 @@ Today, translating that intent into products means manually browsing and placing
 
 ## The Prototype
 
-This prototype adds an **AI Designer (BETA)** on top of the replica of current IKEA planner experience. The user types a description in plain language, sets a budget, and receives **3 furnished room options**: 
+This prototype adds an **AI Designer (BETA)** on top of the replica of current IKEA planner experience. The user types a description in plain language, sets a budget, and receives **3 furnished room options** to spark an idea in just **under 1 minute**: 
 
 - *Get The Essentials*: The comfortable bedroom including what you need 
 - *Match Your Budget*: The most reflective from your description balancing with the budget
