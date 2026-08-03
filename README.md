@@ -21,7 +21,7 @@ Today, translating that intent into products means manually browsing and placing
 
 ## The Prototype
 
-This prototype adds an **AI Designer (BETA)** on top of the replica of current IKEA planner experience. The user types a description in plain language, sets a budget, and receives **3 furnished room options** to spark an idea in just **under 1 minute**: 
+This prototype adds an **AI Designer (BETA)** on top of the replica of current IKEA planner experience. The user types a description in plain language, sets a budget, and receives **3 furnished room options** to start with in just **under 1 minute**: 
 
 - *Get The Essentials*: The comfortable bedroom including what you need 
 - *Match Your Budget*: The most reflective from your description balancing with the budget
@@ -54,7 +54,7 @@ It is deliberately built behind a defined JSON contract ({brief, budget, catalog
 
 - **Get The Essentials**: Because the core intent of any users choosing this option is to save most out of their budget, this option aims to spend only *30-50%* of the user's maximum budget.
 - **Match Your Budget**: This option allows user to optimize the budget fully for the best possible quality and match. The target spend is aimed at *85-100%* of user's target budget.
-- **Complete The Look**: Users choosing this path prioritize prompt accuracy and demonstrate budget flexibility. Recommending products at *100-110%* of their target budget ensures they achieve their ideal room aesthetic, while strategically increasing IKEA's unit volume. 
+- **Complete The Look**: Users choosing this path prioritize prompt accuracy and demonstrate budget flexibility. Recommending products at *100-110%* of their target budget ensures they achieve their ideal room aesthetic, while strategically increasing IKEA's sales. 
 
 ## Try it yourself
 
