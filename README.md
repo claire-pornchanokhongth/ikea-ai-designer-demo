@@ -62,20 +62,23 @@ It is deliberately built behind a defined JSON contract ({brief, budget, catalog
 
 > *"I need a calm, forest theme room with full of plants and a desk to work from home"*
 
-You could type in your prompt perfectly or vaguely
+You could type in your prompt perfectly or vaguely, or select from pre-prompted choices available
 
-2. Compare how the rooms, colors, and finishes change in each of the 3 options
+2. Set your budget
 
-3. Select what matches your thought the most, then finalize your room!
+3. Compare how the rooms, colors, and finishes change in each of the 3 options
 
-> This is where you could either seeking further AI assistance or manually design your room
+4. Select what matches your thought the most, then finalize your room!
+
+> This is where you could either seeking further AI assistance or manually add items to your room
 
 ## Current Scope and Known Limitations
 
+- This prototype only picks up bedroom planner to test the core idea before scaling through every IKEA Room Planner as intended rapidly.
 - Save, measurement, checkout, and account features are mockups.
-- Limited mock products lead to some generated results that might not fully match user prompt.
+- Limited mock products (484 items) lead to some generated results that might not fully match user prompt.
 - Interpretation is keyword-based, not an LLM. Nuanced or contradictory prompts sometimes fall back to a disclosed default.
-- Using Internal CSS for single-page prototypes to test an idea swiftly
+- Using Internal CSS for a single-page prototype to test the idea swiftly.
 - Layout uses slot-based placement. Items can visually overlap in edge cases and can be repositioned by hand.
 - Desktop and mobile are supported, but the experience is designed desktop-first.
 
